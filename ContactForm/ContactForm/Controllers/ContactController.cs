@@ -11,6 +11,11 @@ namespace ContactForm.Controllers
 {
     public class ContactController : Controller
     {
+        static string smtpServer = null;
+        static int? smtpPort;
+        static string smtpUsername = null;
+        static string smtpPassword = null;        
+
         /// <summary>
         /// Returns contact form page.
         /// </summary>
@@ -30,6 +35,7 @@ namespace ContactForm.Controllers
         /// <param name="message">Message body provided by user.</param>
         /// <returns>Status code 200 (OK) if valid data and mail is sent successfully.</returns>
         /// <returns>Status code 500 (internal error) for any error.</returns>
+        // POST: Contact/SendForm
         [HttpPost]
         public ActionResult SendForm(string firstName, string email, string subject, 
             string message)
@@ -37,15 +43,23 @@ namespace ContactForm.Controllers
             HttpStatusCodeResult result;
             try
             {
-                string username = ConfigurationManager.AppSettings.Get("ContactSMTPUser");
-                int port = int.Parse(ConfigurationManager.AppSettings.Get("ContactSMTPPort"));
-                string server = ConfigurationManager.AppSettings.Get("ContactSMTPServer");
-                string password = ConfigurationManager.AppSettings.Get("ContactSMTPPassword");
+                if (string.IsNullOrWhiteSpace(smtpServer))
+                    smtpServer = ConfigurationManager.AppSettings.Get("ContactSMTPServer");
 
-                SmtpClient smtpClient = new SmtpClient(server, port);
+                if (smtpPort == null)
+                    smtpPort = int.Parse(ConfigurationManager.AppSettings.Get("ContactSMTPPort"));                
+
+                if (string.IsNullOrWhiteSpace(smtpUsername))
+                    smtpUsername = ConfigurationManager.AppSettings.Get("ContactSMTPUser");
+
+                if (string.IsNullOrWhiteSpace(smtpPassword))
+                    smtpPassword = ConfigurationManager.AppSettings.Get("ContactSMTPPassword");
+
+                SmtpClient smtpClient = new SmtpClient(smtpServer, (int)smtpPort);
                 smtpClient.EnableSsl = true;
-                smtpClient.Credentials = new NetworkCredential(username, password);
-                smtpClient.Send(email, username, subject, message);
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+                smtpClient.Send(email, smtpUsername, string.Format("{0} - {1}", subject, firstName), message);
                 smtpClient.Dispose();
 
                 result = new HttpStatusCodeResult(HttpStatusCode.OK,
