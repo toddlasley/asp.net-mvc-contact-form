@@ -1,0 +1,7 @@
+blue: #0081b1
+black: #191d21
+header background: #f7f7f7
+middle background, footer font color: #efefef
+
+menu font color, "Get in Touch": #373737
+paragraph text color: #565b5e
