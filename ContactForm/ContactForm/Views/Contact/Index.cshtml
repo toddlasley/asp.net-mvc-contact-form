@@ -4,28 +4,36 @@
 <!DOCTYPE HTML />
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
         <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
         <link href="~/Content/contact-style.css" rel="stylesheet" />
     </head>
     <body>
-        <header>
-            <span>Example Site</span>
-            <ul>
-                <li>How It Works</li>
-                <li>In the News</li>
-                <li>Our Locations</li>
-                <li>FAQ</li>
-                <li>Contact Us</li>
-            </ul>
+        <div id="header" class="row">
+            <a id="title-navbar" class="navbar-brand" href="#">Example Site</a>
+            <button id="menu-btn" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contact-navbar">
+                Menu
+            </button>
+            <div id="contact-navbar" class="collapse navbar-collapse">
+                <ul id="header-navbar" class="nav navbar-nav">
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">In the News</a></li>
+                    <li><a href="#">Our Locations</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>                               
+        </div>
+        <div id="facebook-phone-header">
             <a href="https://www.facebook.com" target="_blank">
-                <img src="~/Images/facebook-grey.png" alt="Facebook link" />
+                <img id="facebook-header" src="~/Images/facebook-grey.png" alt="Facebook link" />
             </a>
-            <div>
-                <img src="~/Images/phone-icon.png" alt="phone icon" />
-                555 - 555 - 5555
+            <div id="phone-container">
+                <img id="phone-icon" src="~/Images/phone-icon.png" alt="phone icon" />
+                <p id="header-phone-number">555 - 555 - 5555</p>
             </div>
-        </header>
+        </div> 
         <img id="banner-image" class="jumbotron" src="~/Images/banner.png" alt="Contact form banner" />
         <div class="container">
             <h1>Get in Touch</h1>
@@ -52,7 +60,7 @@
             </div>
             <button>Submit</button>
         </div>
-        <div>
+        <div id="location-information-container" class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <h3>Our Location</h3>
                 <p>
@@ -71,7 +79,7 @@
                     <img src="~/Images/facebook-white.png" alt="Facebook link" />
                 </a>
             </div>
-            <img class="col-lg-6 col-md-6 col-sm-6 col-xs-6" src="~/Images/map.png" alt="Google Maps Location" />
+            <img id="map-image" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" src="~/Images/map.png" alt="Google Maps Location" />
         </div>
         <footer>
             <ul>

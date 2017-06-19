@@ -1,5 +1,206 @@
-﻿#banner-image {
+﻿body {
+    width: 100vw;
+}
+#header {
+    width: calc(90vw - 150px);
+    margin: 0;
+    display: inline;
+}
+
+#title-navbar {
+    display: inline-block;
+    background-color: #0081b1;
+    color: #ffffff;
+    border-radius: 11px;
+    font-size: 30px;
+    padding: 10px;
+    margin: 40px 10vh;
+}
+
+@media(max-width: 880px) {
+    #title-navbar {
+        margin: 40px 15px 8px;
+    }
+}
+
+@media(max-width: 420px) {
+    #title-navbar {
+        font-size: 20px;
+        margin-left: 15px;
+        margin-right: 0;
+    }
+}
+
+#menu-btn {
+    float: none;
+    margin: 40px 0 8px;
+    background-color: #0081b1;
+    color: white;
+    border-radius: 11px;
+}
+
+@media(max-width: 490px) {
+    #menu-btn {
+        margin: 0 250px 0 15px;
+    }
+}
+
+#contact-navbar {
+    width: calc(90vw - 150px);
+    margin: 0;
+    margin: 40px 0;
+    font-size: 15px;
+    padding: 0;
+}
+
+#contact-navbar a {
+    color: #373737;
+    text-transform: uppercase;
+    padding: 15px 0;
+}
+
+#contact-navbar li {
+    width: 10vw;
+    text-align: center;
+}
+
+@media (max-width: 1150px) {
+    #menu-btn {
+        display: inline-block;
+    }
+    
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+
+    #contact-navbar {
+        margin: 10px;
+        width: 200px;
+    }
+
+    #contact-navbar li {
+        width: 250px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 780px) {
+    #contact-navbar li {
+        padding: 0 15px;
+    }
+}
+
+#facebook-phone-header {
+    width: 250px;
+    position: absolute;
+    float: right;
+    display: inline-block;
+    top: 0px;
+    right: 0px;
+    margin: 40px 20vh 8px 0;
+}
+
+@media(max-width: 1450px) {
+    #facebook-phone-header {
+        margin: 40px 5vh 8px 0;
+    }
+}
+
+@media(max-width: 1240px) {
+    #facebook-phone-header {
+        margin: 40px 1vh 8px 0;
+    }
+}
+
+@media(max-width: 880px) {
+    #facebook-phone-header {
+        margin: 40px 0 8px;
+    }
+}
+
+@media(max-width: 420px) {
+    #facebook-phone-header {
+        width: 185px;
+    }
+}
+
+#facebook-header {
+    position: relative;
+    float: left;
+    margin: 5px 0 0 50px;
+}
+
+@media(max-width: 420px) {
+    #facebook-header {
+        width: 30px;
+        margin: 5px 0 0 0px;
+    }
+}
+
+#phone-container {
+    float: right;
+    background-color: #0081b1;
+    color: #ffffff;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 4px 0 0 0;
+}
+
+@media(max-width: 420px) {
+    #phone-container {
+        height: 30px;
+        font-size: 13px;
+        width: 140px;
+        margin-right: 5px;
+    }
+}
+
+
+#phone-icon {
+    float: left;
+    display: inline-block;
+    position: relative;
+    margin: 10px 5px 10px 12px;
+}
+
+@media(max-width: 420px) {
+    #phone-icon {
+        margin: 8px 3px 10px 12px;
+    }
+}
+
+
+#header-phone-number {
+    margin: 9px 8px 10px 2px;
+    position: relative;
+    float: right;
+}
+
+@media(max-width: 420px) {
+    #header-phone-number {
+        margin-top: 7px;
+        margin-right: 10px;
+    }
+}
+
+#banner-image {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100vw;
+}
+
+#location-information-container {
+    width: 100vw;
+    margin: 0;
+}
+
+#location-information {
+    width: 50vw;
+    padding: 0;
+}
+
+#map-image {
+    width: 50vw;
+    padding: 0;
 }
