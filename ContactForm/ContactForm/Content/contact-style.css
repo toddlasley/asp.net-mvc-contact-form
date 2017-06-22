@@ -17,9 +17,23 @@
     margin: 40px 10vh;
 }
 
+@media(max-width: 1150px) {
+    #title-navbar {
+        margin-right: 8px;
+    }
+}
+
+@media(max-width: 1030px) {
+    #title-navbar {
+        margin-left: 18px;
+        
+    }
+}
+
 @media(max-width: 880px) {
     #title-navbar {
-        margin: 40px 15px 8px;
+        margin-left: 15px;
+        margin-bottom: 8px;
     }
 }
 
@@ -39,6 +53,12 @@
     border-radius: 11px;
 }
 
+@media (max-width: 950px) {
+    #menu-btn {
+        display: inline-block;
+    }
+}
+
 @media(max-width: 490px) {
     #menu-btn {
         margin: 0 250px 0 15px;
@@ -48,10 +68,17 @@
 #contact-navbar {
     width: calc(90vw - 150px);
     margin: 0;
-    margin: 40px 0;
-    font-size: 15px;
+    margin: 40px 0;    
     padding: 0;
 }
+
+@media (max-width: 950px) {
+    #contact-navbar {
+        margin: 10px;
+        width: 100px;
+    }
+}
+
 
 #contact-navbar a {
     color: #373737;
@@ -59,27 +86,21 @@
     padding: 15px 0;
 }
 
+@media (max-width: 1150px) {
+    #contact-navbar a {
+        font-size: 13px;
+    }
+}
+
 #contact-navbar li {
     width: 10vw;
     text-align: center;
+    font-size: 15px;
 }
 
-@media (max-width: 1150px) {
-    #menu-btn {
-        display: inline-block;
-    }
-    
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-
-    #contact-navbar {
-        margin: 10px;
-        width: 200px;
-    }
-
+@media (max-width: 950px) {
     #contact-navbar li {
-        width: 250px;
+        width: 125px;
         text-align: left;
     }
 }
@@ -88,6 +109,12 @@
     #contact-navbar li {
         padding: 0 15px;
     }
+}
+
+@media (max-width: 950px) {    
+    .navbar-collapse.collapse {
+        display: none!important;
+    } 
 }
 
 #facebook-phone-header {
