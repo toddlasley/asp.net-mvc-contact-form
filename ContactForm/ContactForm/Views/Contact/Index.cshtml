@@ -35,51 +35,63 @@
             </div>
         </div> 
         <img id="banner-image" class="jumbotron" src="~/Images/banner.png" alt="Contact form banner" />
-        <div class="container">
+        <div id="main-content" class="container">
             <h1>Get in Touch</h1>
             <p>
                 If you have any questions or comments, we'd love to hear from you. Just fill 
                 out the form below and we'll get back to you soon. Rest assured that any 
                 information you provide will remain confidential.
             </p>
-            <div>
+            <div class="input-container">
                 <label for="first-name-input">First Name</label>
-                <input class="form-control" type="text" name="first-name-input" />
+                <div>
+                    <input class="form-control" type="text" name="first-name-input" />
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                </div>
             </div>
-            <div>
+            <div class="input-container">
                 <label for="email-input">Email</label>
-                <input class="form-control" type="email" name="email-input" />
+                <div>
+                    <input class="form-control" type="email" name="email-input" />
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                </div>
             </div>
-            <div>
+            <div class="input-container">
                 <label for="subject-input">Subject</label>
-                <input class="form-control" type="text" name="subject-input" />
+                <div>
+                    <input class="form-control" type="text" name="subject-input" />
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                </div>
             </div>
-            <div>
+            <div class="input-container">
                 <label for="message-input">Message</label>
+                <span class="glyphicon glyphicon-asterisk"></span>
                 <textarea class="form-control" name="message-input"></textarea>
             </div>
-            <button>Submit</button>
+            <button id="submit-btn">Submit</button>
         </div>
-        <div id="location-information-container" class="row">
-            <div id="location-information" class="location-sub-container col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <h3>Our Location</h3>
-                <p>
-                    Example Site<br />
-                    2500 Technology Dr<br />
-                    Louisville, KY 40299<br />
-                    www.examplesite.com
-                </p>
-                <h4>Call Us</h4>
-                <p>
-                    Louisville: 555-555-5555<br />
-                    San Antonio: 555-555-5555<br />
-                    Toll Free: 800-585-5555
-                </p>
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="~/Images/facebook-white.png" alt="Facebook link" />
-                </a>
+        <div id="location-information-container">
+            <div id="location-information" class="location-sub-container">
+                <div>
+                    <h3>Our Location</h3>
+                    <p>
+                        Example Site<br />
+                        2500 Technology Dr<br />
+                        Louisville, KY 40299<br />
+                        www.examplesite.com
+                    </p>
+                    <h4>Call Us</h4>
+                    <p>
+                        Louisville: 555-555-5555<br />
+                        San Antonio: 555-555-5555<br />
+                        Toll Free: 800-585-5555
+                    </p>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img id="facebook-location" src="~/Images/facebook-white.png" alt="Facebook link" />
+                    </a>
+                </div>
             </div>
-            <img id="map-image" class="location-sub-container col-lg-6 col-md-6 col-sm-6 col-xs-6" src="~/Images/map.png" alt="Google Maps Location" />
+            <img id="map-image" class="location-sub-container" src="~/Images/map.png" alt="Google Maps Location" />
         </div>
         <footer>
             <ul>
