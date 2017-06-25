@@ -1,5 +1,4 @@
 ﻿body {
-    width: 100vw;
     background-color: #efefef;
 }
 
@@ -51,6 +50,12 @@ header {
     }
 }
 
+@media(max-width: 340px) {
+    #title-navbar {
+        margin-left: 8px;
+    }
+}
+
 #menu-btn {
     float: none;
     margin: 40px 0 8px;
@@ -68,6 +73,12 @@ header {
 @media(max-width: 490px) {
     #menu-btn {
         margin: 0 250px 10px 15px;
+    }
+}
+
+@media(max-width: 340px) {
+    #menu-btn {
+        margin-left: 8px;
     }
 }
 
@@ -176,6 +187,14 @@ header {
     }
 }
 
+@media(max-width: 340px) {
+    #facebook-header {
+        width: 25px;
+        margin-top: 8px;
+        margin-left: 18px;
+    }
+}
+
 #phone-container {
     float: right;
     background-color: #0081b1;
@@ -195,6 +214,16 @@ header {
     }
 }
 
+@media(max-width: 340px) {
+    #phone-container {
+        height: 25px;
+        font-size: 12px;
+        width: 132px;
+        margin-top: 8px;
+        margin-right: 5px;
+    }
+}
+
 
 #phone-icon {
     float: left;
@@ -209,6 +238,13 @@ header {
     }
 }
 
+@media(max-width: 340px) {
+    #phone-icon {
+        width: 14px;
+        margin-top: 6px;
+    }
+}
+
 
 #header-phone-number {
     margin: 9px 8px 10px 2px;
@@ -218,7 +254,7 @@ header {
 
 @media(max-width: 420px) {
     #header-phone-number {
-        margin-top: 7px;
+        margin-top: 6px;
         margin-right: 10px;
     }
 }
