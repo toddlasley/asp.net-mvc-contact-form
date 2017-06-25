@@ -67,7 +67,7 @@ header {
 
 @media(max-width: 490px) {
     #menu-btn {
-        margin: 0 250px 0 15px;
+        margin: 0 250px 10px 15px;
     }
 }
 
@@ -418,6 +418,7 @@ header {
 @media(max-width: 940px) {
     #location-information {
         width: 100%;
+        height: 300px;
     }
 }
 
@@ -433,11 +434,42 @@ header {
     line-height: 1.75;
 }
 
+@media(max-width: 1040px) {
+    #location-information p {
+        line-height: 1.5;
+    }
+}
+
+@media(max-width: 940px) {
+    #location-information p {
+        line-height: 1.75;
+    }
+}
+
 #facebook-location {
     margin-top: 22px;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1340px) {
+    #facebook-location {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media(max-width: 1160px) {
+    #facebook-location {
+        margin-top: 15px;
+    }
+}
+
+@media(max-width: 1075px) {
+    #facebook-location {
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 1340px) {
     #location-information > div {
         margin-top: 3%;
         margin-right: 15%;
@@ -454,14 +486,9 @@ header {
     #location-information p {
         font-size: 12px;
     }
-
-    #facebook-location {
-        width: 30px;
-        height: 30px;
-    }
 }
 
-@media(max-width: 990px) {
+@media(max-width: 1160px) {
     #location-information > div {
         margin-top: 0;
         margin-right: 15%;
@@ -490,16 +517,38 @@ header {
 footer {
     background-color: #191d21;
     color: #efefef;
+    padding: 50px 0 0;
+}
+
+@media(max-width: 740px) {
+    footer {
+        padding-top: 45px;
+    }
 }
 
 #footer-links-1,
 #footer-links-2 {
     text-align: center;
+    padding: 0;
 }
 
 #footer-links-1 > li {
     display: inline-block;
-    margin: 60px 10px 20px;
+    margin: 0 25px 20px;
+}
+
+@media(max-width: 875px) {
+    #footer-links-1 > li {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}
+
+@media(max-width: 740px) {
+    #footer-links-1 > li {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
 }
 
 #footer-links-1 a {
@@ -508,13 +557,32 @@ footer {
     color: #efefef;
 }
 
+@media(max-width: 740px) {
+    #footer-links-1 a {
+        font-size: 12px;
+    }
+}
+
 #footer-links-2 > li {
     display: inline-block;
     margin: 0 15px 30px;
 }
 
+@media(max-width: 430px) {
+    #footer-links-2 > li {
+        margin-left: 8px;
+        margin-right: 8px;
+    }    
+}
+
 #footer-links-2 a {
     color: #efefef;
+}
+
+@media(max-width: 430px) {
+    #footer-links-2 a {
+        font-size: 12px;
+    }
 }
 
 #alert-modal .modal-content {
