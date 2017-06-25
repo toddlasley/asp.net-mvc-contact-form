@@ -412,7 +412,7 @@ header {
     }
 }
 
-#submit-btn {
+#contact-form > #submit-btn {
     background-color: #0081b1;
     color: #ffffff;
     width: 100%;
