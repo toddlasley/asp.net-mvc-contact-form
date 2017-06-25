@@ -77,7 +77,7 @@ namespace ContactForm.Controllers
             catch (Exception)
             {
                 result = new HttpStatusCodeResult(HttpStatusCode.InternalServerError,
-                    "An error occurred.Please try again later.");
+                    "An error occurred. Please try again later.");
             }
 
             return result;                       

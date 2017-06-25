@@ -22,7 +22,7 @@ header {
     margin: 40px 10vh;
 }
 
-@media(max-width: 1150px) {
+@media(max-width: 1290px) {
     #title-navbar {
         margin-right: 8px;
     }
@@ -89,7 +89,7 @@ header {
     padding: 0;
 }
 
-@media(max-width: 1170px) {
+@media(max-width: 1180px) {
     #contact-navbar {
         width: 950px;
     }
@@ -263,7 +263,7 @@ header {
     margin: 0 auto;
     display: block;
     padding: 0;
-    width: 100vw;
+    width: 100%;
     background-color: #efefef;
 }
 
@@ -342,6 +342,13 @@ header {
         margin-top: 9px;
         font-size: 12px;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #efefef inset !important;
 }
 
 #main-content input,
@@ -427,10 +434,10 @@ header {
 }
 
 #location-information-container {
-    width: 100vw;
     max-width: 1550px;
     display: block;
     margin: 0 auto;
+    width: 98vw;
 }
 
 .location-sub-container {
@@ -438,17 +445,17 @@ header {
     display: inline-block;
     position: relative;
     max-height: 430px;
+    width: 50%;
 }
 
 #location-information {
     text-align: center;
     background-color: #0081b1;
     color: #ffffff;
-    height: 100%;
-    width: 50%;
     float: left;
-    height: calc(.55483870 * 50vw);
+    height: calc(.5548387096774194 * 49vw);
     min-height: 260px;
+    max-height: 430px;
 }
 
 @media(max-width: 940px) {
@@ -539,9 +546,7 @@ header {
 }
 
 #map-image {
-    vertical-align: middle;
     position: relative;
-    width: 50%;
 }
 
 @media(max-width: 940px) {
