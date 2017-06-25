@@ -44,33 +44,35 @@
                 out the form below and we'll get back to you soon. Rest assured that any
                 information you provide will remain confidential.
             </p>
-            <div class="input-container">
-                <label for="first-name-input">First Name</label>
-                <div>
-                    <input class="form-control" type="text" name="first-name-input" />
-                    <span class="glyphicon glyphicon-asterisk"></span>
+            <form id="contact-form">
+                <div class="input-container">
+                    <label for="first-name-input">First Name</label>
+                    <div>
+                        <input class="form-control" type="text" name="first-name-input" />
+                        <span class="glyphicon glyphicon-asterisk"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="input-container">
-                <label for="email-input">Email</label>
-                <div>
-                    <input class="form-control" type="email" name="email-input" />
-                    <span class="glyphicon glyphicon-asterisk"></span>
+                <div class="input-container">
+                    <label for="email-input">Email</label>
+                    <div>
+                        <input class="form-control" type="email" name="email-input" />
+                        <span class="glyphicon glyphicon-asterisk"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="input-container">
-                <label for="subject-input">Subject</label>
-                <div>
-                    <input class="form-control" type="text" name="subject-input" />
-                    <span class="glyphicon glyphicon-asterisk"></span>
+                <div class="input-container">
+                    <label for="subject-input">Subject</label>
+                    <div>
+                        <input class="form-control" type="text" name="subject-input" />
+                        <span class="glyphicon glyphicon-asterisk"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="input-container">
-                <label for="message-input">Message</label>
-                <span class="glyphicon glyphicon-asterisk"></span>
-                <textarea class="form-control" name="message-input"></textarea>
-            </div>
-            <button id="submit-btn">Submit</button>
+                <div class="input-container">
+                    <label for="message-input">Message</label>
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                    <textarea class="form-control" name="message-input"></textarea>
+                </div>
+                <button id="submit-btn" type="submit">Submit</button>
+            </form>            
         </div>    
         <div id="location-information-container">
             <div id="location-information" class="location-sub-container">
@@ -110,7 +112,53 @@
                 <li><a href="#">Terms of Use</a></li>
             </ul>
         </footer>
+        <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#contact-form').validate({
+                    focusInvalid: false,
+                    messages: {
+                        name: "Please specify your name",
+                        email: {
+                            required: "We need your email address to contact you",
+                            email: "Your email address must be in the format of name@domain.com"
+                        },
+                        subject: "Please specify a subject for the email",
+                        message: "Please include a message to be sent"
+                    },
+                    wrapper: 'li',
+                    errorPlacement: function (error) {
+                        var errorContainer = $('#alert-modal').find('ul');
+                        if (errorContainer.html().indexOf(error.text()) < 0)
+                            errorContainer.append(error);
+                    }
+                });
+
+                $('#contact-form').on('submit', function () {
+                    var form = $(this);
+                    var modal = $('#alert-modal');
+                    if (modal.find('ul').html().trim().length) {
+                        modal.modal('show');
+                    }
+                    else {
+
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
