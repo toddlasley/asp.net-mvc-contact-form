@@ -48,28 +48,28 @@
                 <div class="input-container">
                     <label for="first-name-input">First Name</label>
                     <div>
-                        <input class="form-control" type="text" name="first-name-input" />
+                        <input class="form-control" type="text" name="name" required />
                         <span class="glyphicon glyphicon-asterisk"></span>
                     </div>
                 </div>
                 <div class="input-container">
                     <label for="email-input">Email</label>
                     <div>
-                        <input class="form-control" type="email" name="email-input" />
+                        <input class="form-control" type="email" name="email" required />
                         <span class="glyphicon glyphicon-asterisk"></span>
                     </div>
                 </div>
                 <div class="input-container">
                     <label for="subject-input">Subject</label>
                     <div>
-                        <input class="form-control" type="text" name="subject-input" />
+                        <input class="form-control" type="text" name="subject" required />
                         <span class="glyphicon glyphicon-asterisk"></span>
                     </div>
                 </div>
                 <div class="input-container">
                     <label for="message-input">Message</label>
                     <span class="glyphicon glyphicon-asterisk"></span>
-                    <textarea class="form-control" name="message-input"></textarea>
+                    <textarea class="form-control" rows="10" name="message" maxlength="250" required></textarea>
                 </div>
                 <button id="submit-btn" type="submit">Submit</button>
             </form>            
@@ -142,21 +142,48 @@
                     },
                     wrapper: 'li',
                     errorPlacement: function (error) {
+                        console.log(error);
                         var errorContainer = $('#alert-modal').find('ul');
                         if (errorContainer.html().indexOf(error.text()) < 0)
                             errorContainer.append(error);
                     }
                 });
 
-                $('#contact-form').on('submit', function () {
+                $('#contact-form').on('submit', function (e) {
+                    e.preventDefault();
                     var form = $(this);
                     var modal = $('#alert-modal');
                     if (modal.find('ul').html().trim().length) {
+                        console.log('show modal');
                         modal.modal('show');
                     }
                     else {
+                        console.log('send data');
+                        var data = {
+                            "firstName": form.find('input[name="name"]').val().trim(),
+                            "email": form.find('input[name="email"]').val().trim(),
+                            "subject": form.find('input[name="subject"]').val().trim(),
+                            "message": form.find('textarea').val().trim()
+                        };
 
+                        $.ajax({
+                            method: 'POST',
+                            cache: false,
+                            contentType: 'application/json',
+                            url: '@Url.Action("SendForm", "Contact")',
+                            data: JSON.stringify(data),
+                            complete: function (jqXHR, textStatus) {
+                                console.log('jqXHR: ' + jqXHR + 'textStatus: ' + textStatus);
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log('jqXHR: ' + jqXHR + 'textStatus: ' + textStatus + 'errorThrown: ' + errorThrown );
+                            }
+                        });
                     }
+                });
+
+                $('#alert-modal').on('hide.bs.modal', function () {
+                    $(this).find('ul').html('');
                 });
             });
         </script>

@@ -315,7 +315,7 @@ header {
     position: relative;
     border: none;
     box-shadow: none;
-    background-color: yellow;
+    background-color: inherit;
 }
 
 @media(max-width: 500px) {
