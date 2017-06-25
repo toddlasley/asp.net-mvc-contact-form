@@ -150,14 +150,12 @@
                 $('#contact-form').on('submit', function (e) {
                     e.preventDefault();
                     var form = $(this);
-                    
                     var modal = $('#alert-modal');
+
                     if (!validator.form()) {
-                        console.log('show modal');
                         modal.modal('show');
                     }
                     else {
-                        console.log('send data');
                         var data = {
                             "firstName": form.find('input[name="name"]').val().trim(),
                             "email": form.find('input[name="email"]').val().trim(),
@@ -174,10 +172,16 @@
                             success: function (data, jqXHR, textStatus) {
                                 clearAlertModal();
                                 console.log('data: ' + data + ' jqXHR: ' + jqXHR + ' textStatus: ' + textStatus);
+                                if (textStatus.status == 200) {
+                                    form.find('input').val('');
+                                    form.find('textarea').val('');
+                                }
+                                modal.find('div.special-alert').html(textStatus.statusText);
+                                modal.modal('show');
                             },
                             error: function (jqXHR, textStatus, errorThrown) {
                                 clearAlertModal();
-                                modal.find('div.special-alert').html(errorThrown.toString());
+                                modal.find('div.special-alert').html(errorThrown);
                                 modal.modal('show');
                             }
                         });
