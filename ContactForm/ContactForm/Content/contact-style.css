@@ -1,6 +1,12 @@
 ﻿body {
     width: 100vw;
+    background-color: #efefef;
 }
+
+header {
+    background-color: rgb(247, 247, 247);
+}
+
 #header {
     width: calc(90vw - 150px);
     margin: 0;
@@ -222,7 +228,7 @@
     display: block;
     padding: 0;
     width: 100vw;
-    max-width: 1550px; 
+    background-color: #efefef;
 }
 
 #main-content {
@@ -423,6 +429,14 @@
     margin: 5% 20% 0;
 }
 
+#location-information p {
+    line-height: 1.75;
+}
+
+#facebook-location {
+    margin-top: 22px;
+}
+
 @media(max-width: 1200px) {
     #location-information > div {
         margin-top: 3%;
@@ -471,4 +485,34 @@
     #map-image {
         width: 100%;
     }
+}
+
+footer {
+    background-color: #191d21;
+    color: #efefef;
+}
+
+#footer-links-1,
+#footer-links-2 {
+    text-align: center;
+}
+
+#footer-links-1 > li {
+    display: inline-block;
+    margin: 60px 10px 20px;
+}
+
+#footer-links-1 a {
+    text-transform: uppercase;
+    padding: 15px 0;
+    color: #efefef;
+}
+
+#footer-links-2 > li {
+    display: inline-block;
+    margin: 0 15px 30px;
+}
+
+#footer-links-2 a {
+    color: #efefef;
 }

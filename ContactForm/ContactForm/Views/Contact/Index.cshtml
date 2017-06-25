@@ -10,36 +10,38 @@
         <link href="~/Content/contact-style.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="header" class="row">
-            <a id="title-navbar" class="navbar-brand" href="#">Example Site</a>
-            <button id="menu-btn" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contact-navbar">
-                Menu
-            </button>
-            <div id="contact-navbar" class="collapse navbar-collapse">
-                <ul id="header-navbar" class="nav navbar-nav">
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">In the News</a></li>
-                    <li><a href="#">Our Locations</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>                               
-        </div>
-        <div id="facebook-phone-header">
-            <a href="https://www.facebook.com" target="_blank">
-                <img id="facebook-header" src="~/Images/facebook-grey.png" alt="Facebook link" />
-            </a>
-            <div id="phone-container">
-                <img id="phone-icon" src="~/Images/phone-icon.png" alt="phone icon" />
-                <p id="header-phone-number">555 - 555 - 5555</p>
+        <header>
+            <div id="header" class="row">
+                <a id="title-navbar" class="navbar-brand" href="#">Example Site</a>
+                <button id="menu-btn" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#contact-navbar">
+                    Menu
+                </button>
+                <div id="contact-navbar" class="collapse navbar-collapse">
+                    <ul id="header-navbar" class="nav navbar-nav">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">In the News</a></li>
+                        <li><a href="#">Our Locations</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-        </div> 
+            <div id="facebook-phone-header">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img id="facebook-header" src="~/Images/facebook-grey.png" alt="Facebook link" />
+                </a>
+                <div id="phone-container">
+                    <img id="phone-icon" src="~/Images/phone-icon.png" alt="phone icon" />
+                    <p id="header-phone-number">555 - 555 - 5555</p>
+                </div>
+            </div>
+        </header>         
         <img id="banner-image" class="jumbotron" src="~/Images/banner.png" alt="Contact form banner" />
         <div id="main-content" class="container">
             <h1>Get in Touch</h1>
             <p>
-                If you have any questions or comments, we'd love to hear from you. Just fill 
-                out the form below and we'll get back to you soon. Rest assured that any 
+                If you have any questions or comments, we'd love to hear from you. Just fill
+                out the form below and we'll get back to you soon. Rest assured that any
                 information you provide will remain confidential.
             </p>
             <div class="input-container">
@@ -69,7 +71,7 @@
                 <textarea class="form-control" name="message-input"></textarea>
             </div>
             <button id="submit-btn">Submit</button>
-        </div>
+        </div>    
         <div id="location-information-container">
             <div id="location-information" class="location-sub-container">
                 <div>
@@ -94,18 +96,18 @@
             <img id="map-image" class="location-sub-container" src="~/Images/map.png" alt="Google Maps Location" />
         </div>
         <footer>
-            <ul>
-                <li>About Us</li>
-                <li>How It Works</li>
-                <li>In the News</li>
-                <li>Our Locations</li>
-                <li>FAQ</li>
-                <li>Contact Us</li>
+            <ul id="footer-links-1">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">In the News</a></li>
+                <li><a href="#">Our Locations</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
-            <ul>
-                <li>&copy;Example Site 2015</li>
-                <li>Privacy Statement</li>
-                <li>Terms of Use</li>
+            <ul id="footer-links-2">
+                <li><a href="#">&copy;Example Site 2015</a></li>
+                <li><a href="#">Privacy Statement</a></li>
+                <li><a href="#">Terms of Use</a></li>
             </ul>
         </footer>
         <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
