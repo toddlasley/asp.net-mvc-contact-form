@@ -516,3 +516,36 @@ footer {
 #footer-links-2 a {
     color: #efefef;
 }
+
+#alert-modal .modal-content {
+    background-color: #f7f7f7;
+    color: #565b5e;
+}
+
+@media(max-width: 400px) {
+    #alert-modal ul {
+        padding: 0;
+        font-size: 12px
+    }
+}
+
+#alert-modal button {
+    background-color: #0081b1;
+    color: #ffffff;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+@media(max-width: 400px) {
+    #alert-modal button {
+        font-size: 12px;
+        height: 30px;
+        width: 60px;
+    }
+}
+
+#alert-modal button:hover {
+    background-color: #00749f;
+}

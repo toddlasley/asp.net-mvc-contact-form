@@ -55,7 +55,7 @@
                 <div class="input-container">
                     <label for="email-input">Email</label>
                     <div>
-                        <input class="form-control" type="email" name="email" required />
+                        <input class="form-control" type="email" name="email" required novalidate />
                         <span class="glyphicon glyphicon-asterisk"></span>
                     </div>
                 </div>
@@ -142,7 +142,6 @@
                     },
                     wrapper: 'li',
                     errorPlacement: function (error) {
-                        console.log(error);
                         var errorContainer = $('#alert-modal').find('ul');
                         if (errorContainer.html().indexOf(error.text()) < 0)
                             errorContainer.append(error);
@@ -183,6 +182,7 @@
                 });
 
                 $('#alert-modal').on('hide.bs.modal', function () {
+                    console.log('hid modal');
                     $(this).find('ul').html('');
                 });
             });
