@@ -47,10 +47,10 @@ namespace ContactForm.Controllers
                 if (string.IsNullOrWhiteSpace(smtpServer))
                     smtpServer = ConfigurationManager.AppSettings.Get("ContactSMTPServer");
 
-                if (smtpPort == null)
+                if (!smtpPort.HasValue)
                     smtpPort = int.Parse(ConfigurationManager.AppSettings.Get("ContactSMTPPort"));
 
-                if (enableSsl == null)
+                if (!enableSsl.HasValue)
                     enableSsl = bool.Parse(ConfigurationManager.AppSettings.Get("ContactSMTPEnableSSL"));        
 
                 if (string.IsNullOrWhiteSpace(smtpUsername))
@@ -59,8 +59,8 @@ namespace ContactForm.Controllers
                 if (string.IsNullOrWhiteSpace(smtpPassword))
                     smtpPassword = ConfigurationManager.AppSettings.Get("ContactSMTPPassword");
 
-                SmtpClient smtpClient = new SmtpClient(smtpServer, (int)smtpPort);
-                smtpClient.EnableSsl = (bool)enableSsl;
+                SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort.GetValueOrDefault());
+                smtpClient.EnableSsl = enableSsl.GetValueOrDefault();
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
                 smtpClient.Send(email, smtpUsername, string.Format("{0} - {1}", subject, firstName), message);
