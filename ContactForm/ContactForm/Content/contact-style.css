@@ -604,6 +604,10 @@ footer {
     }
 }
 
+#footer-links-2 {
+    margin-bottom: 0;
+}
+
 #footer-links-2 > li {
     display: inline-block;
     margin: 0 15px 30px;
