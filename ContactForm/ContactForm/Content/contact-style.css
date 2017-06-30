@@ -1,5 +1,6 @@
 ﻿body {
     background-color: #efefef;
+    overflow-x: hidden;
 }
 
 header {
@@ -434,10 +435,9 @@ input:-webkit-autofill:active {
 }
 
 #location-information-container {
-    max-width: 1550px;
     display: block;
     margin: 0 auto;
-    width: 98vw;
+    width: 99vw;
 }
 
 .location-sub-container {
@@ -453,7 +453,7 @@ input:-webkit-autofill:active {
     background-color: #0081b1;
     color: #ffffff;
     float: left;
-    height: calc(.5548387096774194 * 49vw);
+    height: calc(.5548387096774194 * 49.5vw);
     min-height: 260px;
     max-height: 430px;
 }
