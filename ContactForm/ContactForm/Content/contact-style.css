@@ -302,6 +302,7 @@ header {
 #main-content > p {
     text-align: center;
     color: #565b5e;
+    font-size: 15px;
 }
 
 @media(max-width: 500px) {
@@ -335,7 +336,7 @@ header {
     margin: 8px 0;
     width: auto;
     color: #565b5e;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 @media(max-width: 500px) {
@@ -437,7 +438,7 @@ input:-webkit-autofill:active {
 #location-information-container {
     display: block;
     margin: 0 auto;
-    width: 99vw;
+    width: 100vw;
 }
 
 .location-sub-container {
@@ -453,7 +454,7 @@ input:-webkit-autofill:active {
     background-color: #0081b1;
     color: #ffffff;
     float: left;
-    height: calc(.5548387096774194 * 49.5vw);
+    height: calc(.5548387096774194 * 50vw);
     min-height: 260px;
     max-height: 430px;
 }
@@ -475,6 +476,7 @@ input:-webkit-autofill:active {
 
 #location-information p {
     line-height: 1.75;
+    font-size: 15px;
 }
 
 @media(max-width: 1040px) {
